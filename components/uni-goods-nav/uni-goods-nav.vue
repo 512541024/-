@@ -16,9 +16,9 @@
 				</view>
 			</view>
 			<view :class="{'uni-tab__right':fill}" class="flex uni-tab__cart-sub-box ">
-				<view v-for="(item,index) in buttonGroup" :key="index" :style="{backgroundColor:item.backgroundColor,color:item.color}"
-				 class="flex uni-tab__cart-button-right" @click="buttonClick(index,item)"><text class="uni-tab__cart-button-right-text">{{ item.text }}</text></view>
-				<!-- <view class="flex uni-tab__cart-button-right uni-tab__color-y ">立即购买</view> -->
+<!-- 				<view v-for="(item,index) in buttonGroup" :key="index" :style="{backgroundColor:item.backgroundColor,color:item.color}"
+				 class="flex uni-tab__cart-button-right" @click="buttonClick(index,item)"><text class="uni-tab__cart-button-right-text">{{ item.text }}</text></view> -->
+                  <input class="comment" />
 			</view>
 		</view>
 	</view>
@@ -94,6 +94,8 @@
 		padding: 5upx;
 	}
 	
+
+	
 	.flex {
 		/* #ifndef APP-NVUE */
 		display: flex;
@@ -123,9 +125,29 @@
 	.uni-tab__right {
 		margin: 5px 0;
 		margin-right: 10px;
-		border-radius: 100px;
+		/* border-radius: 100px; */
 		overflow: hidden;
+		padding: 10upx;
+		.comment{
+			border: solid 1upx;
+			height: 100%;
+			border-radius: 15upx;
+			padding-right: 140rpx;
+			padding-left: 20rpx;
+		}
+		.comment::before{
+			    content: "评论";
+			    position: absolute;
+			    right: 0px;
+			    background-color: #57b7b7;
+			    height: 100%;
+				line-height: 50rpx;
+				padding-left: 25rpx;
+				padding-right: 25rpx;
+		}
+		
 	}
+	
 
 	.uni-tab__cart-button-left {
 		/* #ifndef APP-NVUE */
