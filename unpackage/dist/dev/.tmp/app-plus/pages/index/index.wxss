@@ -1,0 +1,35 @@
+
+.bw-swiper{
+		 margin-top: 15rpx;
+		 margin-bottom: 10rpx;
+}
+.uni-margin-wrap {
+		width:100%;
+/* 		 margin:15upx 0upx 0upx 15upx; */
+}
+.swiper {
+		height: 300rpx;
+}
+.swiper-item {
+		display: block;
+		height: 300rpx;
+		line-height: 300rpx;
+		text-align: center;
+}
+.swiper-item image{
+	  width: 100%;
+	  height: 100%;
+}
+.swiper-list {
+		margin-top: 40rpx;
+		margin-bottom: 0;
+}
+.uni-common-mt{
+		margin-top:60rpx;
+		position:relative;
+}
+.info {
+		position: absolute;
+		right:20rpx;
+}
+

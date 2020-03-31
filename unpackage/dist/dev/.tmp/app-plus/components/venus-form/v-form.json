@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "mpvue-picker": "/node-modules/mpvue-picker/src/mpvue-picker/mpvuePicker"
+  }
+}

@@ -1,0 +1,1 @@
+<view><bw-swiper class="bw-swiper" style="width:100%;" vue-id="8dd740cc-1" swiperList="{{swiperList}}" swiperType="{{true}}" textStyleBgcolor="{{textStyleBgcolor}}" textTip="{{false}}" bind:__l="__l"></bw-swiper><grid vue-id="8dd740cc-2" bind:__l="__l"></grid></view>

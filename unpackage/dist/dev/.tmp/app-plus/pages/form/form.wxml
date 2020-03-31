@@ -1,0 +1,1 @@
+<view><v-form vue-id="1524a240-1" formDefinition="{{formDefinition}}" data="{{data}}" data-event-opts="{{[['^submit',[['handleSubmit']]]]}}" bind:submit="__e" bind:__l="__l"></v-form></view>

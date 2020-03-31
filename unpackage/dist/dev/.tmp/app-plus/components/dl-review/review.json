@@ -1,0 +1,10 @@
+{
+  "component": true,
+  "usingComponents": {
+    "refresh": "/components/refresh/refresh",
+    "uniicon": "/components/uni-icons/uni-icons",
+    "dn-icon": "/components/dn-icon/dn-icon",
+    "item": "/components/dl-review/item",
+    "loadmore": "/components/uni-load-more/uni-load-more"
+  }
+}

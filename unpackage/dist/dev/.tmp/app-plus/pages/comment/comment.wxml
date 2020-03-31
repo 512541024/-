@@ -1,0 +1,1 @@
+<view class="content"><review vue-id="1a371400-1" reviewMsg="{{reviewMsg}}" childData="{{childData}}" data-event-opts="{{[['^childReview',[['childReview']]]]}}" bind:childReview="__e" bind:__l="__l"></review></view>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "bw-swiper": "/components/bw-swiper/bw-swiper",
+    "grid": "/pages/index/grid"
+  }
+}

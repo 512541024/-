@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/index/zixun/zixun",
+    "pages/index/login",
+    "pages/comment/comment",
+    "pages/user/user",
+    "pages/HM-search/HM-search",
+    "pages/form/form",
+    "pages/news/index",
+    "pages/user/userInfo/userInfo",
+    "pages/detail/detail"
+  ],
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "新闻资讯",
+    "navigationBarBackgroundColor": "#2F85FC",
+    "backgroundColor": "#FFFFFF"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/navigation/index.png",
+        "selectedIconPath": "static/navigation/selected_index.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/HM-search/HM-search",
+        "iconPath": "static/navigation/search.png",
+        "selectedIconPath": "static/navigation/selected_search.png",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/navigation/user.png",
+        "selectedIconPath": "static/navigation/selected_user.png",
+        "text": "信息"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "APP-引导页+官方示例",
+  "compilerVersion": "2.6.5",
+  "usingComponents": {}
+}

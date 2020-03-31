@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "uniicon": "/components/uni-icons/uni-icons",
+    "dn-icon": "/components/dn-icon/dn-icon"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "表单",
+  "usingComponents": {
+    "v-form": "/components/venus-form/v-form"
+  }
+}

@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"page { height:100vh; }\n.",[1],"nav-list{ margin-top: ",[0,50],"; }\n.",[1],"nav-li{ border-radius: 10px; width: 45%; margin: 0 2.5% 40px; }\n.",[1],"bg-img{ width: 100%; height: 100vh; position: absolute; }\n",],undefined,{path:"./pages/index/zixun/zixun.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/index/zixun/zixun.wxml') } }));

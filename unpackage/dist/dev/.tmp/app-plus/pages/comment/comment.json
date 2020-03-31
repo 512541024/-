@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "评论",
+  "usingComponents": {
+    "review": "/components/dl-review/review"
+  }
+}
