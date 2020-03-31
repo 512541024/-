@@ -54,8 +54,8 @@
 <style>
 	
 	
-	@import "colorui/main.css";
-	@import "colorui/icon.css";
+ 	@import "colorui/main.css";
+	@import "colorui/icon.css"; 
 	/*导入图标*/
 	@font-face {
 		font-family: texticons;

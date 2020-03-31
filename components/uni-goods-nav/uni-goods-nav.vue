@@ -16,9 +16,8 @@
 				</view>
 			</view>
 			<view :class="{'uni-tab__right':fill}" class="flex uni-tab__cart-sub-box ">
-<!-- 				<view v-for="(item,index) in buttonGroup" :key="index" :style="{backgroundColor:item.backgroundColor,color:item.color}"
-				 class="flex uni-tab__cart-button-right" @click="buttonClick(index,item)"><text class="uni-tab__cart-button-right-text">{{ item.text }}</text></view> -->
-                  <input class="comment" />
+                  <input class="comment" @click="inputClick" />
+				  <i  class="texticons biaoqing" >&#xe64e;</i>
 			</view>
 		</view>
 	</view>
@@ -82,6 +81,9 @@
 					index,
 					content: item
 				})
+			},
+			inputClick(e){
+				console.log(e)
 			}
 		}
 	}
@@ -89,9 +91,7 @@
 
 <style lang="scss" scoped>
 	.texticons_select{
-		background-color: #669900;
-		border-radius: 10px;
-		padding: 5upx;
+        color: #39B54A;
 	}
 	
 
@@ -132,10 +132,12 @@
 			border: solid 1upx;
 			height: 100%;
 			border-radius: 15upx;
-			padding-right: 140rpx;
+			padding-right: 20rpx;
 			padding-left: 20rpx;
+			margin-right: 20upx;
+			border-color: #a29b9b;
 		}
-		.comment::before{
+/* 		.comment::before{
 			    content: "评论";
 			    position: absolute;
 			    right: 0px;
@@ -144,6 +146,10 @@
 				line-height: 50rpx;
 				padding-left: 25rpx;
 				padding-right: 25rpx;
+		} */
+		.biaoqing{
+			color: #7f7777;
+			font-size: 60upx;
 		}
 		
 	}
@@ -172,7 +178,7 @@
 	}
 
 	.uni-tab__text {
-		margin-top: 3px;
+		/* margin-top: 3px; */
 		font-size: $uni-font-size-sm;
 		color: #666;
 	}
