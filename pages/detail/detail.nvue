@@ -13,14 +13,13 @@
 			<text class="article-meta-text article-time">{{banner.datetime}}</text>
 			
 		</view>
-		
+		<!-- 界面内容 -->
 		<view class="article-content">
 			<rich-text :nodes="content" style="font-size: 14px;"></rich-text>
 		</view>
 		
 		<view class="comment-wrap uni-goods-nav">
 			<uni-goods-nav :fill="true"  :options="options" :button-group="buttonGroup"  @click="onClick" @buttonClick="buttonClick" ></uni-goods-nav>
-			
 		</view>
 		
 		
@@ -75,9 +74,13 @@
 				          icon: '&#xe733;',
 				          text: '不喜欢',
 				         
+				        }, {
+				          icon: '&#xe733;',
+				          text: '收藏',
+				         
 				        }],
 				        buttonGroup: [{
-				          text: '加入收藏',
+				          text: '',
 				          backgroundColor: '#ff0000',
 				          color: '#fff'
 				        }

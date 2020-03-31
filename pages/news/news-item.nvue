@@ -93,6 +93,7 @@
 
     .media-title {
         flex: 1;
+		margin-left: 15upx;
     }
 
     .media-title {
@@ -110,6 +111,7 @@
 
     .image-section {
         margin-top: 20upx;
+		border-radius: 15px;
         flex-direction: row;
         justify-content: space-between;
     }
@@ -131,16 +133,19 @@
     .image-list1 {
         width: 690upx;
         height: 481upx;
+		border-radius: 10px;
     }
 
     .image-list2 {
         width: 225upx;
         height: 146upx;
+		border-radius: 10px;
     }
 
     .image-list3 {
         width: 225upx;
         height: 146upx;
+		border-radius: 10px;
     }
 
     .media-info {
