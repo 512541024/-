@@ -64,6 +64,7 @@
 		src: url('~@/text-icon.ttf') format('truetype');
 	}
 	
+
 	.texticons{
 	           font-family: "texticons";
 	           font-size:16px;

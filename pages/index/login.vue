@@ -25,6 +25,8 @@
 		 },
 		methods: {
 			appLogin(){
+				
+		
                 let me = this;
 			    uni.getProvider({
 			        service: 'oauth',
@@ -41,10 +43,8 @@
 			                            success: (infoRes)=> {
 											console.log('用户：', infoRes);
 											me.commonData.setData_user(infoRes.userInfo);
-											uni.switchTab({
-											    url: 'index'
-											});
-											
+											uni.navigateBack();
+											uni.$emit('appLogin',infoRes.userInfo);
 			                            }
 			                        });
 			                    },

@@ -6,7 +6,8 @@
 		{
 				"path": "pages/index/index",
 				"style": {
-					"navigationBarTitleText": "首页"
+					"navigationBarTitleText": "首页",
+					"backgroundColor":"#fff"
 				}
 		}, 
 		{
@@ -45,6 +46,29 @@
 					"navigationBarTitleText": "搜索"
 				}
 		}, 
+		{
+				"path": "pages/info-list/info-list",
+				"style": {
+					"navigationBarTitleText": "八大菜系1"
+				}
+		}, 
+		{
+				"path": "pages/info-list/index",
+				"style": {
+					"navigationBarTitleText": "八大菜系2"
+				}
+		}, 
+		
+		{
+				"path": "pages/info-list/list2detail-list",
+				"style": {
+					"navigationBarTitleText": "八大菜系3"
+				}
+		}, 
+		
+		
+		
+		
 		
 
 
@@ -60,7 +84,7 @@
 	},
 
 		{
-			"path": "pages/news/index",
+			"path": "pages/info-list/index",
 			"style": {
 				"navigationBarTitleText": "菜谱咨询"
 /* 	 			"app-plus": {

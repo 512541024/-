@@ -4,7 +4,7 @@
 		<uni-notice-bar class="uni-notice-bar" showIcon="true" scrollable="true" single="true" :text="text"></uni-notice-bar>
 		<view class="example-body">
 			<uni-grid :column="3" :highlight="true" :show-border="false" :square="false" @change="change">
-				<uni-grid-item  v-for="(item, index) in list" :hor="35" :ver="-45" marker="badge" type="error" text="12" :key="index"  >
+				<uni-grid-item  v-for="(item, index) in list"  :key="index"  >
 					<image :src="item.url" class="image" mode="aspectFill" />
 					<text class="text">{{ item.text }}</text>
 				</uni-grid-item>
@@ -30,7 +30,7 @@
 				list: [{
 						url: '../../static/svg/地三鲜.png',
 						text: '菜谱咨询',
-						path:"./zixun/zixun"
+						path:"../info-list/info-list"
 					},
 					{
 						url: '../../static/svg/茶点.png',
@@ -104,7 +104,7 @@
 		/* padding: 0 30upx 30upx */
 	}
     .uni-notice-bar{
-		margin-bottom: 0px;
+		margin-bottom: 0px!important;
 	}
 	.example-title {
 		display: flex;
@@ -141,7 +141,7 @@
 	}
 
 	.example-body {
-		padding: 30upx;
+		 padding: 30upx; 
 		background: #fff
 	}
 

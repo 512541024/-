@@ -3,10 +3,10 @@
 		<image class="bg-img" :src="imageUrl"></image>
 		<scroll-view scroll-y class="page">
 			<view class="nav-list">
-				<navigator hover-class="none" :url="'../../news/index?name=' + item.title" class="nav-li" navigateTo :class="'bg-'+item.color"
+				<navigator hover-class="none" :url="'../../info-list/info-list?name=' + item.title" class="nav-li" navigateTo :class="'bg-'+item.color"
 				 :style="[{animation: 'show ' + ((index+1)*0.2+1) + 's 1'}]" v-for="(item,index) in elements" :key="index" >
 					<view class="nav-title">{{item.title}}</view>
-					<view class="nav-name">{{item.name}}</view>
+					<view class="nav-name">{{item.name}}</view>                                                                                                        
 					<text :class="'cuIcon-' + item.cuIcon"></text>
 				</navigator>
 			</view>
@@ -100,8 +100,7 @@
 		margin-top: 50upx;
 	}
 	.nav-li{
-		border-radius: 10px;
-		width: 45%;
+		width: 40%;
 		margin: 0 2.5% 40px;
 	}
 	.bg-img{

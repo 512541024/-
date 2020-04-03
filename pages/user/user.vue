@@ -5,10 +5,10 @@
 				<view class="box">
 					<view class="box-hd">
 						<view class="avator">
-							<img :src="user.avatarUrl">
+							<img :src="usnerinfo.avatarUrl">
 						</view>
 						
-						<view class="phone-number" v-if="user.nickName">{{user.nickName}}</view>
+						<view class="phone-number" v-if="usnerinfo.nickName">{{usnerinfo.nickName}}</view>
 						<view class="login-title" v-else @click="login()">点击登录</view>
 					</view>
 					<view class="box-bd">
@@ -83,38 +83,27 @@
 	</view>
 </template>
 <script>
-	
+	/* import $ from 'jquery' */
    
 	export default {
 		data() {
 			return {
 				user:{},
+				usnerinfo:{}
 			};
 		},
 		onLoad() {
-			
+			   // 监听事件  
+			    uni.$on('appLogin',(usnerinfo)=>{  
+			        this.usnerinfo = usnerinfo;  
+					console.log("usnerinfo =",this.usnerinfo);
+			    })  
 			
 		},
 		onShow: function() {
-			
-			console.log(this.commonData);
-			uni.login({
-			  provider: 'weixin',
-			  success:  (loginRes)=> {
-			    console.log("login:",loginRes);
-			    // 获取用户信息
-			    uni.getUserInfo({
-			      provider: 'weixin',
-				  withCredentials:true,
-			      success:  (infoRes)=> {
-					  // #给 uesr 赋值
-			        console.log('用户：', infoRes);
-					this.user = this.commonData.data.user = infoRes.userInfo;
-			      }
-			    });
-			  }
-			});
-			console.log(this.user);
+			console.log(this.commonData.data);
+			this.user = Object.assign(this.user, this.commonData.data.user);
+			console.log("use =",this.user);
 
 		},
 		methods: {
@@ -125,7 +114,6 @@
 			},
 			
 			login(){
-
 				uni.showModal({
 				    title: '是否跳转登录界面？',
 				    success: function (res) {

@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="bg">
 		<!-- <bw-img-upload style="width:100%" ></bw-img-upload> -->
 		<bw-swiper class="bw-swiper" :swiperList="swiperList" :swiperType="true" style="width:100%"   :textStyleBgcolor="textStyleBgcolor" :textTip="false" ></bw-swiper>
 		<grid ></grid> 
@@ -69,7 +69,8 @@
 	}
 </script>
 
-<style>
+<style lang="scss">
+
 	 .bw-swiper{
 		 margin-top: 15upx;
 		 margin-bottom: 10upx;
