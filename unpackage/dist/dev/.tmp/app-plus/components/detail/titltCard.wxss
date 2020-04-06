@@ -223,9 +223,9 @@
 }
 .videoInfo {
   width: 100%;
-  margin: 0px 0px 0px 0px;
+  margin: 0px 0px 10px 0px;
   color: #757575;
-  border-bottom: solid 0.5px #757575;
+  border-bottom: solid 0.5px #eadada;
   padding-bottom: 10px;
 }
 .videoInfo .videoInfo_number text {

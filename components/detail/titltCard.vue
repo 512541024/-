@@ -17,12 +17,12 @@
 	  <span class="title">{{ options.title }}</span>
 	  <view class="videoInfo">
 	  	 <view class="videoInfo_number">
-			<text><i class="texticons">&#xe612;</i>1213</text>
-			<text><i class="texticons">&#xe612;</i>1213</text>
+			<i class="texticons">&#xe612;</i><text>1213</text>
+			<i class="texticons">&#xe612;</i><text>1213</text>
 			<span class="time">{{new Date().toLocaleTimeString()}}</span>
 		 </view>
 		 <view class="videoInfo_warn">
-		 	<text><i class="texticons">&#xe612;</i>未经作者授权禁止转载</text>		
+		 	<i class="texticons">&#xe612;</i><text>未经作者授权禁止转载</text>		
 		 </view>
 		 <view class="videoInfo_content">
 		 	<text>简介:你只看到了第二层，你把我想成了第一层，实际上我在第五层</text>		
@@ -74,6 +74,7 @@
 		.videoInfo_number text{
 			margin-right: 10px;
 		}
+
 		color: #757575;
 		border-bottom: solid 0.5px #eadada;
 		padding-bottom: 10px;
