@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "选项卡",
+  "navigationBarBackgroundColor": "#8272c3",
+  "usingComponents": {
+    "s-tabs": "/components/s-tabs/index",
+    "s-tab": "/components/s-tab/index"
+  }
+}

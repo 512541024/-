@@ -88,6 +88,15 @@
 
 
 
+
+
+
+
+
+
+
+
+
 /* 	page {
 		display: flex;
 		flex-direction: column;
@@ -103,7 +112,7 @@ view {
 		/* padding: 0 30upx 30upx */
 }
 .uni-notice-bar{
-		margin-bottom: 0px;
+		margin-bottom: 0px!important;
 }
 .example-title {
 		display: -webkit-box;
@@ -142,7 +151,7 @@ view {
 		margin: 0rpx 0
 }
 .example-body {
-		padding: 30rpx;
+		 padding: 30rpx; 
 		background: #fff
 }
 .example-info {

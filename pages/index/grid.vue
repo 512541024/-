@@ -27,23 +27,27 @@
 		data() {
 			return {
 				text:"欢迎你来到天下菜系的APP。加油，奥利给！",
-				list: [{
+				list: [
+					{
+						url: '../../static/svg/海南鸡饭.png',
+						text: '菜谱推荐',
+						path:"../info-list/info-list-Recommend"
+					},
+					{
 						url: '../../static/svg/地三鲜.png',
 						text: '菜谱咨询',
 						path:"../info-list/info-list"
 					},
 					{
 						url: '../../static/svg/茶点.png',
-						text: '菜谱建立'
+						text: '菜谱建立',
+						path:"../LevineHua-editor/LevineHua-editor"
 					},
 					{
 						url: '../../static/svg/黑芝麻糊.png',
 						text: '查询菜谱'
 					},
-					{
-						url: '../../static/svg/海南鸡饭.png',
-						text: '菜谱推荐'
-					},
+				
 					{
 						url: '../../static/svg/qifei.jpg',
 						text: '起飞'
@@ -74,6 +78,11 @@
 					    },
 					});
 				}else{
+					// #ifdef  MP-WEIXIN
+					if(item.path=="../LevineHua-editor/LevineHua-editor"){
+						item.path ="../LevineHua-editor/editor"
+					}
+					// #endif
 					uni.navigateTo({
 					    url:item.path
 					});

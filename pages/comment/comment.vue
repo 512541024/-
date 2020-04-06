@@ -198,14 +198,25 @@
 				
 			}
 		},
-		onLoad() {
+
+		onLoad(option){
+			const data = JSON.parse(decodeURIComponent(option.data));
+			if(data){
+				this.reviewMsg.unshift(data);
+				uni.showToast({
+					title:"发送成功"
+				})
+			}
+
 
 		},
-		methods: {
+		methods: {	
 			childReview(data) {
 				console.log(data);
 				this.childData = this.childDataAjax;
-			}
+			},
+
+
 		}
 	}
 </script>

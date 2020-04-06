@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "视频界面",
+  "navigationBarBackgroundColor": "#8272c3",
+  "usingComponents": {
+    "uni-goods-nav-view": "/components/uniGoodsNavView/uniGoodsNavView",
+    "review": "/components/dl-review/review",
+    "s-tabs": "/components/s-tabs/index",
+    "s-tab": "/components/s-tab/index",
+    "titlt-card": "/components/detail/titltCard",
+    "card-list": "/components/info-list/cardList"
+  }
+}

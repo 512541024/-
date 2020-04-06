@@ -23,12 +23,14 @@
 			<swiper-item class="swiper-item"  v-for="(item,index) in swiperList" :key="index" :class="(cardCur==index && displayMultipleItems ==1 && !vertical &&  !fullScreen)?'cur':''"  @tap="clickItem(index)">
 				<view v-if="item[imageKey] && !item[videoKey]">
 					<image :src="item[imageKey]"  :style="{'height':swiperHeight+'px'}"></image>
+	
 				    <text v-if="textTip" class="swiperText" :style="{
 						'bottom':(swiperType?(textStyleBottom+12):textStyleBottom)+'%',
 						'right':textStyleRight+'%',
 						'color':textStyleColor,
 						'background':textStyleBgcolor,
-						'font-size':upxtopx(textStyleSize)
+						'font-size':upxtopx(textStyleSize),
+						'line-height': '20px'
 					}">{{item[textKey]}}</text>
 				</view>
 				<view v-if="item[videoKey]">

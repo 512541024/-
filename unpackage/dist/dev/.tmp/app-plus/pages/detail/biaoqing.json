@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "表情",
+  "navigationBarBackgroundColor": "#8272c3",
+  "usingComponents": {
+    "chat-input": "/components/yszyun-imchat-emoji/chatinput",
+    "message-show": "/components/yszyun-imchat-emoji/messageshow"
+  }
+}

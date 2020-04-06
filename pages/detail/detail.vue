@@ -1,29 +1,8 @@
 <template>
-	<view>
+	<view @tap="tap" style="height: 100vh;">
 		
-		<view class="banner" auto-focus>
-			<image class="banner-img" :src="banner.image_url"></image>
-			<view class="title-area">
-				<text class="title-text">{{banner.title}}</text>
-			</view>
-		</view>
-		<view class="article-meta">
-			<text class="article-meta-text article-author">{{banner.source}}</text>
-			<text class="article-meta-text article-text">发表于</text>
-			<text class="article-meta-text article-time">{{banner.datetime}}</text>
-			
-		</view>
-		<!-- 界面内容 -->
-		<view class="article-content">
-			<rich-text :nodes="content" style="font-size: 14px;"></rich-text>
-		</view>
-		
-		<view class="comment-wrap uni-goods-nav">
-			<uni-goods-nav :fill="true"  :options="options" :button-group="buttonGroup"  @click="onClick" @buttonClick="buttonClick" ></uni-goods-nav>
-		</view>
-		
-		
-		
+	   <detail ></detail>
+       <uniGoodsNavView :options="options"></uniGoodsNavView>
 	</view>
 </template>
  </view>
@@ -33,7 +12,9 @@
 
 <script>
 	import htmlParser from '@/common/html-parser'
-	import uniGoodsNav from '@/components/uni-goods-nav/uni-goods-nav.vue'
+	import detail from '@/components/detail/index.vue'
+	import uniGoodsNavView from '@/components/uniGoodsNavView/uniGoodsNavView.vue'
+
 	
 
 	const FAIL_CONTENT = '<p>获取信息失败1</p>';
@@ -58,12 +39,12 @@
 	}
 
 	export default {
-		components: {uniGoodsNav},
+		components: {uniGoodsNavView,detail},
 		data() {
 			return {
 				banner: {},
 				content: [],
-				  options: [{
+				options: [{
 				          icon: '&#xe63a;',
 				          text: '评论',
 						  url: "../comment/comment"
@@ -79,12 +60,6 @@
 				          text: '收藏',
 				         
 				        }],
-				        buttonGroup: [{
-				          text: '',
-				          backgroundColor: '#ff0000',
-				          color: '#fff'
-				        }
-				        ]
 			}
 		},
 		onShareAppMessage() {
@@ -94,6 +69,12 @@
 			}
 		},
 		onLoad(event) {
+			console.log("this is detail ");
+			uni.$on('toDetail',(detail)=>{
+				console.log("detail =",detail);
+			}) 
+			
+				
 			// 目前在某些平台参数会被主动 decode，暂时这样处理。
 			try {
 				this.banner = JSON.parse(decodeURIComponent(event.query));
@@ -104,6 +85,9 @@
 			uni.setNavigationBarTitle({
 				title: this.banner.title
 			});
+			
+
+	
 
 			this.getDetail();
 		},
@@ -128,9 +112,11 @@
 			     onClick (e,item) {
 					 console.log("??")
 					 if(e.content.url){
-						 uni.navigateTo({
+						 //如果是评论
+						 this.$refs.uniGoodsNav.isShow = false;
+/* 						 uni.navigateTo({
 						 		url: e.content.url
-						 });
+						 }); */
 					 }else {
 						 uni.showToast({
 						   title: `点击${e.content.text}`,
@@ -142,7 +128,21 @@
 			      buttonClick (e) {
 			        console.log(e)
 			        this.options[2].info++
-			      }
+			      },
+				  //表情点击事件
+				  biaoqingClick(e){
+					  console.log("表情点击"+e.isOpen)
+					  this.$refs.emoji.isOpenClick(e.isOpen);
+				  },
+				 //表情选中事件
+				 emotion(e){
+					 console.log("表情选中"+e)
+					 this.$refs.uniGoodsNav.emotion(e);
+				 },
+				 //界面点击事件
+				 tap(e){
+				/* 	 console.log("界面点击事件",e) */
+				 }
 		}
 	}
 </script>
@@ -152,17 +152,19 @@
 
 	
 	
+	
+	/* #endif */
 	page {
 		min-height: 100%;
 	}
+
 	
 	.uni-goods-nav{
 		position: fixed;  
 		bottom: 0rpx;
 		width: 100%;
 	}
-
-	/* #endif */
+	
 
 	.banner {
 		height: 360upx;

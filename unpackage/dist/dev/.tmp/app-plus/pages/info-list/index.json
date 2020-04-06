@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "其他示例",
+  "usingComponents": {
+    "refresh": "/components/info-list/refresh",
+    "nav-tab": "/components/info-list/navTab",
+    "tab-bar4": "/components/info-list/tabBar4"
+  }
+}

@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "菜谱咨询",
-  "usingComponents": {
-    "news-page": "/pages/news/news-page",
-    "uni-fab": "/components/uni-fab/uni-fab"
-  }
-}

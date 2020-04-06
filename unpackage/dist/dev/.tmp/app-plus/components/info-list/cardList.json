@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "hm-row-video-card": "/components/hm-row-video-card/index"
+  }
+}

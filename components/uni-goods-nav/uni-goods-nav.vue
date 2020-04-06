@@ -3,32 +3,43 @@
 		<!-- 底部占位 -->
 		<view class="uni-tab__seat" />
 		<view class="uni-tab__cart-box flex">
-			<view class="flex uni-tab__cart-sub-box">
+			
+			<view class="flex uni-tab__cart-sub-box" v-if="isShow">
 				<view v-for="(item,index) in options" :key="index" class="flex uni-tab__cart-button-left uni-tab__shop-cart" @click="onClick(index,item)">
 					<view class="uni-tab__icon">
-						<!-- <image class="image" :src="item.icon" mode="widthFix" /> -->
-						<i  :class="[{texticons_select:index == selctIndex}]" class="texticons" v-html="item.icon" ></i>
+						<i  :class="[{texticons_select:index == selctIndex},{texticons_select:index==options.length-1&&isShoucang}]" class="texticons" v-html="item.icon" ></i>
 					</view>
 					<text class="uni-tab__text">{{item.text}}</text>
+					
 					<view class="flex uni-tab__dot-box">
 						<text v-if="item.info" :class="{ 'uni-tab__dots': item.info > 9 }" class="uni-tab__dot ">{{ item.info }}</text>
 					</view>
 				</view>
 			</view>
-			<view :class="{'uni-tab__right':fill}" class="flex uni-tab__cart-sub-box ">
-                  <input class="comment" @click="inputClick" />
-				  <i  class="texticons biaoqing" >&#xe64e;</i>
+			<i  v-else class="texticons inputBack" @click="inputBack" >&#xe65e;</i>
+			<view v-if="!isShow" :class="{'uni-tab__right':fill}" class="flex uni-tab__cart-sub-box ">
+                  <input  type="text" @keyboardheightchange="inputClick" v-model="inputVal" class="comment" cursor-spacing="1" confirm-type="send" @focus="inputClick"   @confirm="confirm"/>
+				  <!-- 操作图标 -->
+				  <i  class="texticons biaoqing" v-if="isComment"  @click="biaoqingClick" >&#xe64e;</i>
+				  <i  class="texticons biaoqing"  style="color:#007AFF" @click="confirm" >&#xe77e;</i>
 			</view>
 		</view>
+		
 	</view>
 </template>
 
 <script>
+	
 	export default {
 		name: 'UniGoodsNav',
 		data() {
 			return {
-				selctIndex:null
+				selctIndex:null,
+				isOpen:false,
+				inputVal:``,
+				isShoucang:false,
+				isComment:false,//是否展示评论的专属图标
+				isShow:true,
 			}
 		},
 		props: {
@@ -63,11 +74,17 @@
 			fill: {
 				type: Boolean,
 				default: false
-			}
+			},
+
 		},
 		methods: {
 			onClick(index, item) {
-				index!=0?this.selctIndex = index:"";
+				console.log(123)
+				if(index!=this.options.length-1){
+					index!=0&&index!=1?this.selctIndex = index:"";
+				}else{
+					this.isShoucang = !this.isShoucang;
+				};
 				this.$emit('click', {
 					index,
 					content: item
@@ -77,14 +94,70 @@
 				if (uni.report) {
 					uni.report(item.text, item.text)
 				}
-				this.$emit('buttonClick', {
+				getCurrentPages().$emit('buttonClick', {
 					index,
 					content: item
 				})
 			},
-			inputClick(e){
-				console.log(e)
+			//输入框的事件
+			inputClick(){
+				console.log(this)
+			   this.isShow=false; 
+			},
+			//输入边框返回事件
+			inputBack(){
+				this.isShow=true;
+				this.isOpen = false;
+				this.$emit('biaoqingClick', {
+					isOpen: this.isOpen
+				})
+			},
+			confirm(e){
+				console.log("点击确定",e);
+                let user = this.commonData.getUser("../../pages/index/login");
+				if(user){
+					//模拟成功
+					uni.showLoading({
+					    title: '正在发送中....'
+					});
+					setTimeout(()=>{
+					    uni.hideLoading();
+						let data={
+								headImgSrc: user.avatarUrl,
+								userName: user.nickName,
+								userLevel: '5',
+								cenId: '19',
+								sendTime: new Date().toLocaleDateString(),
+								sendMsg: this.inputVal,
+								likeNum: 0,
+								dislikeNum: 0,
+								reviewNum: 0,
+								reviewLess: []
+							};
+						uni.navigateTo({
+							url: '../../pages/comment/comment?data='+ encodeURIComponent(JSON.stringify(data))
+						})
+					},1000);
+
+	
+				}
+
+			
+			},
+			//表情是否开启
+			biaoqingClick(e){
+				this.isOpen = !this.isOpen
+				console.log("??????")
+				this.$emit('biaoqingClick', {
+					isOpen: this.isOpen
+				})
+			},
+			//表情选中添加表情
+			emotion(e){
+				this.isShow=false;
+				this.inputVal+=e
 			}
+			
 		}
 	}
 </script>
@@ -131,6 +204,7 @@
 		.comment{
 			border: solid 1upx;
 			height: 100%;
+			    width: 90%;
 			border-radius: 15upx;
 			padding-right: 20rpx;
 			padding-left: 20rpx;
@@ -150,6 +224,7 @@
 		.biaoqing{
 			color: #7f7777;
 			font-size: 60upx;
+			margin-right: 20upx;
 		}
 		
 	}
@@ -240,5 +315,10 @@
 
 	.uni-tab__color-r {
 		background-color: #ff0000;
+	}
+	.inputBack{
+		    font-size: 20px;
+		    line-height: 50px;
+		    margin: 0px 1px 0px 10px;	
 	}
 </style>

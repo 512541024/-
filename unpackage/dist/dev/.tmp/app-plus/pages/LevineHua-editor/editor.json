@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "菜谱编辑",
+  "usingComponents": {
+    "myeditor": "/components/robin-editor/editor"
+  }
+}

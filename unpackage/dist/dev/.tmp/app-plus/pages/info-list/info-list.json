@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "八大菜系",
+  "usingComponents": {
+    "refresh": "/components/info-list/refresh",
+    "nav-tab": "/components/info-list/navTab",
+    "click-circle": "/components/info-list/clickCircle",
+    "tab-bar4": "/components/info-list/tabBar4"
+  }
+}

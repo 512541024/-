@@ -1,0 +1,2 @@
+setCssToHead(["@charset \x22UTF-8\x22;\n.",[1],"Index-Page .",[1],"s-tab-wrap { height: ",[0,600],"; padding: ",[0,40],"; font-size: ",[0,28],"; }\n",],undefined,{path:"./pages/detail/index.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/detail/index.wxml') } }));

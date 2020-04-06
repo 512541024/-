@@ -9,7 +9,7 @@
 		 >
 			<image v-if="item.url == currentPage" :src="item.imgClick" mode=""></image>
 			<image v-else :src="item.imgNormal" mode=""></image>
-			<view class="text">{{item.text}}</view>
+			<view class="text">{{item.text}}</view> 
 		</view>
 	</view>
 </template>
@@ -28,25 +28,25 @@
 				tabBar:[{
 						url:'info-list',
 						text:'八大菜系',
-						imgNormal:'static/list-info/index_change.png',
-						imgClick:'static/list-info/index.png'
+						imgNormal:'../../static/list_img/tabBar-menu-1.png',
+						imgClick:'../../static/list_img/tabBar-menu-1.png'
 					},
 					{
 						url:'info-list2',
 						text:'自创经典',
-						imgNormal:'static/list-info/index_change.png',
-						imgClick:'static/list-info/index.png'
+						imgNormal:'../../static/list_img/tabBar-menu-2.png',
+						imgClick:'../../static/list_img/tabBar-menu-2.png'
 					}
 					,{
 						url:'index3',
 						text:'魔鬼食材',
-						imgNormal:'static/list-info/index_change.png',
-						imgClick:'static/list-info/index.png'
+						imgNormal:'../../static/list_img/tabBar-menu-3.png',
+						imgClick:'../../static/list_img/tabBar-menu-3.png'
 					},{
 						url:'index',
 						text:'其他示例',
-						imgNormal:'static/list-info/index_change.png',
-						imgClick:'static/list-info/index.png'
+						imgNormal:'../../static/list_img/tabBar-menu-4.png',
+						imgClick:'../../static/list_img/tabBar-menu-4.png'
 					}]
 			};
 		},
@@ -62,7 +62,7 @@
 				if(item.url !== this.currentPage){
 					var isUrl = `${item.url}`
 					const that = this
-					uni.redirectTo({
+					uni.navigateTo({
 					  url: isUrl
 					});
 				} else{

@@ -15,7 +15,7 @@
 					</view> -->
 				</view>
 				<view class="viewMb">
-					<text class="cenHostMsg3 textCenMsg">#{{reviewMsg.cenId}}</text>
+					<!-- <text class="cenHostMsg3 textCenMsg">#{{reviewMsg.cenId}}</text> -->
 					<text class="cenHostMsg4 textCenMsg">{{reviewMsg.sendTime}}</text>
 				</view>
 				<view class="cenHostReview viewMb">

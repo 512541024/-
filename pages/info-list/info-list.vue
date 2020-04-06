@@ -38,14 +38,14 @@
 							</swiper-item>
 						</swiper>
 					</view>
-					<view class='card' v-for="(item,index) in listItem" v-if="listItem.length > 0" :key="index">
+					<view class='card' v-for="(item,index) in listItem" v-if="listItem.length > 0" :key="index" @click="card_click(item,index)">
 						<view class="card-img-view">
-							<image class="card-img" src="../../static/list_img/葱鸡.jpg"></image>
+							<image class="card-img" src="../../static/list_img/list-menu-3.jpg"></image>
 						    <view class="infoList">5454万观看  15454点赞</view>
 						</view>
 						<!-- 卡片内容 -->
 						<view class="card-content">
-							<image class="card-content-img" src="../../static/list_img/葱鸡.jpg"></image>
+							<image class="card-content-img" src="../../static/list_img/touxiang2.png"></image>
 							<view><text class="card-content-title">{{item}}</text></view>
 							<text class="card-content-autor">杨大帅</text>
 							<text class="card-content-time">{{time}}</text>
@@ -75,7 +75,7 @@ export default {
 	data() {
 		return {
 			time:new Date().toLocaleDateString(),
-			currentPage:'other',
+			currentPage:'info-list',
 			toView:'',//回到顶部id
 			isX:0,//放在store统一管理
 			isY:999,//放在store统一管理
@@ -159,7 +159,22 @@ export default {
 					})
 					this.$refs.refresh.endAfter() //刷新结束调用
 				}, 1000)
+		},
+		//跳转方法的重写
+		card_click(item,index) {
+	        uni.showToast({
+	        	icon: 'success',
+	        	title: item + index
+	        });
+			uni.navigateTo({
+			  url: "../detail/detail",	
+			});
+			uni.$emit('toDetail',{item:item,
+			index:index,
+			})
+			
 		}
+
 	}
 };
 </script>
@@ -235,7 +250,7 @@ export default {
 				position: absolute;
 				bottom: 10upx;
 				left: 10upx;
-				font-size: 10upx;
+				font-size: 10px;
 				color: #fff;
 			}
 		}
@@ -265,7 +280,7 @@ export default {
 			}
 			.card-content-time{
 				margin-left: 15upx;
-				font-size: 10upx;
+				font-size: 10px;
 			}	
 
 		}

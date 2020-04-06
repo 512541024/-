@@ -3,6 +3,7 @@
     "type": "transparent"
   },
   "usingComponents": {
-    "uni-goods-nav": "/components/uni-goods-nav/uni-goods-nav"
+    "uni-goods-nav-view": "/components/uniGoodsNavView/uniGoodsNavView",
+    "detail": "/components/detail/index"
   }
 }

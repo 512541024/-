@@ -1,0 +1,43 @@
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 44.27rpx;
+  height: 10.93rpx;
+}
+
+.video {
+  width: 20rpx;
+  height: 10.93rpx;
+}
+
+.side {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 1.33rpx;
+  height: 10.93rpx;
+}
+
+.title {
+  width: 22.93rpx;
+  height: 5.6rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 2.8rpx;
+  white-space: pre-wrap;
+  color: #131f3c;
+  font-family: Helvetica;
+  font-size: 2rpx;
+}
+
+.desc {
+  opacity: 0.9;
+  margin-top: 1.47rpx;
+  line-height: 1.87rpx;
+  white-space: pre;
+  color: #8491b0;
+  font-family: Helvetica;
+  font-size: 1.6rpx;
+}

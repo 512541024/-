@@ -49,22 +49,64 @@
 		{
 				"path": "pages/info-list/info-list",
 				"style": {
-					"navigationBarTitleText": "八大菜系1"
+					"navigationBarTitleText": "八大菜系"
 				}
 		}, 
 		{
 				"path": "pages/info-list/index",
 				"style": {
-					"navigationBarTitleText": "八大菜系2"
+					"navigationBarTitleText": "其他示例"
 				}
 		}, 
 		
 		{
-				"path": "pages/info-list/list2detail-list",
+				"path": "pages/info-list/info-list-Recommend",
 				"style": {
-					"navigationBarTitleText": "八大菜系3"
+					"navigationBarTitleText": "推荐菜系",
+					"navigationBarBackgroundColor":"#8272c3"
 				}
-		}, 
+		},
+		
+		{
+				"path": "pages/detail/videoDetail",
+				"style": {
+					"navigationBarTitleText": "视频界面",
+					"navigationBarBackgroundColor":"#8272c3"
+				}
+		},
+		
+		{
+				"path": "pages/detail/index",
+				"style": {
+					"navigationBarTitleText": "选项卡",
+					"navigationBarBackgroundColor":"#8272c3"
+				}
+		},
+		
+		
+		//表情
+		{
+				"path": "pages/detail/biaoqing",
+				"style": {
+					"navigationBarTitleText": "表情",
+					"navigationBarBackgroundColor":"#8272c3"
+				}
+		},
+		
+		//富文本编辑器
+		{
+				"path": "pages/LevineHua-editor/LevineHua-editor",
+				"style": {
+					"navigationBarTitleText": "菜谱编辑"
+				}
+		},
+		 
+		 {
+		 		"path": "pages/LevineHua-editor/editor",
+		 		"style": {
+		 			"navigationBarTitleText": "菜谱编辑"
+		 		}
+		 }, 
 		
 		
 		
@@ -83,27 +125,7 @@
 		}
 	},
 
-		{
-			"path": "pages/info-list/index",
-			"style": {
-				"navigationBarTitleText": "菜谱咨询"
-/* 	 			"app-plus": {
-					"titleNView": {
-						"buttons": [
-							{
-									"fontSrc": "/static/yticon.ttf",
-									"text": "\ue60d",
-									"fontSize": "26",
-									"color": "#303133",
-									"float": "left",
-									"background": "rgba(0,0,0,0)"
-								}
-						]
-					}
-				} */
-				
-			}
-		},
+
 		{
 			"path": "pages/user/userInfo/userInfo",
 			"style": {

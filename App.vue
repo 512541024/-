@@ -38,7 +38,7 @@
 				'src': "url('./text-icon.ttf')"
 			});
 			// #endif
-			
+
 		
 			
 		},
@@ -47,7 +47,30 @@
 		},
 		onHide: function() {
 			console.log('App Hide')
+		},
+		globalData:{
+			getUser:function(){
+				    let usnerinfo = uni.getStorageSync('uerInfo');
+					if(!usnerinfo){
+						uni.showModal({
+						    title: this.App_title,
+						    content: "您还没有登陆，需要登陆吗？ ",
+						    success: function (res) {
+						        if(res.confirm){
+						            uni.navigateTo({
+						            	url:"../../../pages/index/login"
+						            })
+						        } else if (res.cancel) {
+						            console.log('用户点击取消');
+						        }
+						    },
+						});
+						return false
+					}
+					return true
+			}
 		}
+
 	}
 </script>
 

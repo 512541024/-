@@ -1,0 +1,8 @@
+
+.uni-goods-nav{
+	position: fixed;  
+	bottom: 0rpx;
+	width: 100%;
+}
+
+

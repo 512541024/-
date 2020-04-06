@@ -149,6 +149,14 @@
 
 
 
+page {
+	min-height: 100%;
+}
+.uni-goods-nav{
+	position: fixed;  
+	bottom: 0rpx;
+	width: 100%;
+}
 .banner {
 	height: 360rpx;
 	position: relative;

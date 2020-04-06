@@ -1,0 +1,1 @@
+<view class="box _div"><image class="video _img" src="{{constants.image1}}"></image><view class="side _div"><label class="title _span">标题</label><label class="desc _span">描述行</label></view></view>

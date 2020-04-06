@@ -1,0 +1,44 @@
+.box {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 332px;
+  height: 82px;
+  padding: 5px 10px 5px 10px;
+}
+
+.video {
+  width: 150px;
+  height: 82px;
+}
+
+.side {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+  height: 82px;
+}
+
+.title {
+  width: 172px;
+  height: 42px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 21px;
+  white-space: pre-wrap;
+  color: #131f3c;
+  font-family: Helvetica;
+  font-size: 15px;
+}
+
+.desc {
+  opacity: 0.9;
+  margin-top: 11px;
+  line-height: 14px;
+  white-space: pre;
+  color: #8491b0;
+  font-family: Helvetica;
+  font-size: 12px;
+}

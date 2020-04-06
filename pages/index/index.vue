@@ -1,7 +1,7 @@
 <template>
 	<view class="bg">
 		<!-- <bw-img-upload style="width:100%" ></bw-img-upload> -->
-		<bw-swiper class="bw-swiper" :swiperList="swiperList" :swiperType="true" style="width:100%"   :textStyleBgcolor="textStyleBgcolor" :textTip="false" ></bw-swiper>
+		<bw-swiper class="bw-swiper" :interval="4500" :autoplay="true" :videoAutoplay="true" :swiperList="swiperList" :swiperType="true" style="width:100%"   :textStyleBgcolor="textStyleBgcolor" :textTip="true" ></bw-swiper>
 		<grid ></grid> 
 	</view>
 </template>
@@ -30,26 +30,32 @@
 							{img: '../../static/lunbo/菜2.jpg',text:'暴鱼菊'},
 							{img: '../../static/lunbo/菜3.jpg',text:'大鱼顿火锅'}
 						],
-				textStyleBgcolor:"#333"		
+				textStyleBgcolor:"rgba(51, 51, 51, 0.42)"		
 				   
 			}
 		},
 		onLoad() {
-			const userName = this.commonData.data.user.nickName;
-			if(userName){
-				uni.showModal({
-				    title: this.App_title,
-				    content: "欢迎你 "+userName,
-				    success: function (res) {
-				        if(res.confirm){
-				            console.log('用户点击确定');
-				        } else if (res.cancel) {
-				            console.log('用户点击取消');
-				        }
-				    },
-				});
-			}
-		
+	
+			if(uni.getStorageSync('isOnceShow')){
+			     //只允许显示一次
+				 uni.setStorage({
+				     key: 'isOnceShow',
+				     data: false
+				 });
+				 uni.showModal({
+				     title: this.App_title,
+				     content: "欢迎你 "+userName,
+				     success: function (res) {
+				         if(res.confirm){
+				             console.log('用户点击确定');
+				         } else if (res.cancel) {
+				             console.log('用户点击取消');
+				         }
+				     },
+				 });
+			 }
+
+
 		},
 	
 		methods: {

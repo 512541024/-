@@ -1,0 +1,1 @@
+<view class="test-component _div"><block wx:for="{{optionList}}" wx:for-item="item" wx:for-index="__i0__"><hm-row-video-card vue-id="{{'7a7226aa-1-'+__i0__}}" options="{{item}}" bind:__l="__l"></hm-row-video-card></block></view>

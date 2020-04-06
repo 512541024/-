@@ -9,7 +9,7 @@
 						</view>
 						
 						<view class="phone-number" v-if="usnerinfo.nickName">{{usnerinfo.nickName}}</view>
-						<view class="login-title" v-else @click="login()">点击登录</view>
+						<view class="login-title"  style="z-index: 999;" v-else @click="login()">点击登录</view>
 					</view>
 					<view class="box-bd">
 						<view class="item">
@@ -98,12 +98,14 @@
 			        this.usnerinfo = usnerinfo;  
 					console.log("usnerinfo =",this.usnerinfo);
 			    })  
+				//注入user
+				 this.usnerinfo = uni.getStorageSync('uerInfo');
+				 console.log("usnerinfo =", this.usnerinfo);
+		
 			
 		},
 		onShow: function() {
-			console.log(this.commonData.data);
-			this.user = Object.assign(this.user, this.commonData.data.user);
-			console.log("use =",this.user);
+	
 
 		},
 		methods: {
@@ -115,7 +117,8 @@
 			
 			login(){
 				uni.showModal({
-				    title: '是否跳转登录界面？',
+				    title: this.App_title,
+					content:"是否跳转登录界面",
 				    success: function (res) {
 				        if (res.confirm) {
 				           uni.navigateTo({

@@ -42,8 +42,18 @@
 			                            provider: 'weixin',
 			                            success: (infoRes)=> {
 											console.log('用户：', infoRes);
-											me.commonData.setData_user(infoRes.userInfo);
+											/* me.commonData.setData_user(infoRes.userInfo); */
+											uni.setStorage({//将用户信息保存在本地
+											     key: 'uerInfo',
+											     data: infoRes.userInfo
+											})
+											
+											uni.setStorage({//是否第一次登陆
+											     key: 'isOnceShow',
+											     data: true
+											})
 											uni.navigateBack();
+
 											uni.$emit('appLogin',infoRes.userInfo);
 			                            }
 			                        });

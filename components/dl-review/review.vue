@@ -104,7 +104,8 @@
 				setTimeout(() => {
 					this.more = "noMore";
 				}, 1000);
-			}
+			},
+
 		}
 	}
 </script>

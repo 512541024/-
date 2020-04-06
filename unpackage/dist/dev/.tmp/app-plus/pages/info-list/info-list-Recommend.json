@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "推荐菜系",
+  "navigationBarBackgroundColor": "#8272c3",
+  "usingComponents": {
+    "refresh": "/components/info-list/refresh",
+    "nav-tab": "/components/info-list/navTab"
+  }
+}

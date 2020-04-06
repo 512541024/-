@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "菜谱编辑",
+  "usingComponents": {
+    "u-parse": "/components/uParse/src/wxParse",
+    "qf-alert": "/components/uParse/qf-alert"
+  }
+}

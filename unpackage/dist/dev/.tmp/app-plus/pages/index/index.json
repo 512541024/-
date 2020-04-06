@@ -1,5 +1,6 @@
 {
   "navigationBarTitleText": "首页",
+  "backgroundColor": "#fff",
   "usingComponents": {
     "bw-swiper": "/components/bw-swiper/bw-swiper",
     "grid": "/pages/index/grid"

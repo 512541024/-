@@ -1,17 +1,18 @@
 <template>
 	<view class="navTabBox">
 		<view class="longTab">
-			<scroll-view scroll-x="true" style="white-space: nowrap; display: flex" scroll-with-animation :scroll-left="isLeft-changeLeft">
+			<scroll-view scroll-x="false" style="white-space: nowrap; display: flex" scroll-with-animation :scroll-left="isLeft-changeLeft">
 				<view
 					class="longItem"
 					:style="'min-width:' + isWidth + 'px'"
 					:data-index="index"
-					:class="index === tabClick ? 'click' : ''"
+					:class="[index === tabClick ? 'click' : '',{longItemRecommend:isRecommend}]"
 					v-for="(item, index) in tabTitle"
 					:key="index"
 					:id="'id' + index"
 					@click="longClick(index)"
 				>
+				<!-- <i class="texticons" style="margin: 0px 5px 0px 5px; font-size: 13px;" v-html="isRecommend?'&#xe62f;':''"></i> -->
 					{{ item }}
 				</view>
 				<view class="underlineBox" :style="'transform:translateX(' + isLeft + 'px);width:' + lineWidth + 'px'"><view class="underline"></view></view>
@@ -26,6 +27,9 @@ export default {
 	props: {
 		tabTitle: {
 			type: Array
+		},
+		isRecommend:{
+			type:Boolean
 		}
 	},
 	data() {
@@ -36,7 +40,8 @@ export default {
 			tabLeft: 0,
 			leftList:[],
 			lineWidth:0,
-			wWidth:0
+			wWidth:0,
+			longItemRecommend:"longItemRecommend"
 		};
 	},
 	computed: {
@@ -106,7 +111,21 @@ export default {
 			display: inline-block;
 			line-height: 40upx;
 			text-align: center;
+			font-size: $uni-font-size-lg;
+
 		}
+		//推荐界面的样式
+		.longItemRecommend{
+			border-radius: 15px ;
+			background-color: #8272c3 ;
+			margin: 0px 10px 0px 10px ;
+			font-size: $uni-font-size-lg;
+			height: 45upx;
+			line-height: 45upx;
+		}
+/* 		.longItemRecommend::before{
+			content: "&#xe63a;";
+		} */
 		.underlineBox {
 			height: 3px;
 			width: 20%;
